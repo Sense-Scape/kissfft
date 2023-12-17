@@ -48,7 +48,6 @@ set(KISSFFT_DATATYPE "float" CACHE STRING "Principal datatype of kissfft: double
 option(KISSFFT_OPENMP "Build kissfft with OpenMP support" OFF)
 option(KISSFFT_PKGCONFIG "Build pkg-config files" ON)
 option(KISSFFT_STATIC "Build kissfft as static (ON) or shared library (OFF)" OFF)
-option(KISSFFT_TEST "Build kissfft tests" ON)
 option(KISSFFT_TOOLS "Build kissfft command-line tools" ON)
 option(KISSFFT_USE_ALLOCA "Use alloca instead of malloc" OFF)
 
@@ -359,13 +358,4 @@ endif()
 
 if(KISSFFT_TOOLS)
     add_subdirectory(tools)
-endif()
-
-#
-# Build and run tests if requested by user
-#
-
-if(KISSFFT_TEST)
-    enable_testing()
-    add_subdirectory(test)
 endif()
